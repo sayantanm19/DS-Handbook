@@ -1,6 +1,6 @@
 //
 // DS Handbook
-// Quick Sort Sort
+// Quick Sort
 //
 
 #include <stdio.h>

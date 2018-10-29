@@ -1,6 +1,6 @@
 //
 // DS Handbook
-// Insertion Sort Sort
+// Insertion Sort
 //
 
 #include<stdio.h>
@@ -8,13 +8,11 @@
 int main()
 {
 	int data[100],n,temp,i,j;
-	printf("Enter number of elements to be sorted:: ");
+	printf("Enter number of elements to be sorted:");
 	scanf("%d",&n);
 	printf("Enter elements: ");
 	for(i = 0; i < n; i++)
-	{
 		scanf("%d",&data[i]);
-	}
 	for(i = 1; i < n; i++)
 	{
 		temp = data[i];

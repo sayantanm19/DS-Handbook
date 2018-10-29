@@ -1,6 +1,6 @@
 //
 // DS Handbook
-// Selection Sort Sort
+// Selection Sort
 //
 
 #include <stdio.h>
