@@ -31,6 +31,7 @@ void insertAtBeginning(int value)
     }
     printf("\nInsertion successful");
 }
+
 void insertAtEnd(int value)
 {
    struct Node *newNode;
@@ -106,6 +107,7 @@ void deleteBeginning()
       printf("\nDeletion successful");
    }
 }
+
 void deleteEnd()
 {
    if(head == NULL)
@@ -127,6 +129,7 @@ void deleteEnd()
       printf("\nDeletion successful");
    }
 }
+
 void deleteSpecific(int delValue)
 {
    if(head == NULL)
@@ -158,6 +161,7 @@ void deleteSpecific(int delValue)
       printf("\nDeletion successful");
    }
 }
+
 void display()
 {
    if(head == NULL)

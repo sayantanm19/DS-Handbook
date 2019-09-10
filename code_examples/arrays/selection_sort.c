@@ -4,29 +4,40 @@
 //
 
 #include <stdio.h>
-
+ 
 int main()
- {
-    int data[100],i,n,steps,temp;
-    printf("Enter the number of elements to be sorted: ");
-    scanf("%d",&n);
-    for(i = 0; i < n; i++)
-      {
-       printf("Enter element: ");
-       scanf("%d", &data[i]);
+{
+  int array[100], n, pos, temp, i, j;
+ 
+  printf("Enter number of elements\n");
+  scanf("%d", &n);
+ 
+  printf("Enter the %d values\n", n);
+ 
+  for (i = 0; i < n; i++)
+    scanf("%d", &array[i]);
+ 
+  for (i = 0; i < (n - 1); i++)
+  {
+    pos = i;
+   
+    for (j = i + 1; j < n; j++)
+    {
+      if (array[pos] > array[j])
+        pos = j;
     }
-    for(steps = 0; steps < n; steps++)
-    for(i = steps+1; i < n; i++)
-     {
-         if(data[steps] > data[i])
-          {
-             temp = data[steps];
-             data[steps] = data[i];
-             data[i] = temp;
-         }
+    if (pos != i)
+    {
+      temp = array[i];
+      array[i] = array[pos];
+      array[pos] = temp;
     }
-    printf("Sorted array: ");
-    for(i = 0; i<n; i++)
-        printf("%d  ",data[i]);
-    return 0;
+  }
+ 
+  printf("Sorted list in ascending order:\n");
+ 
+  for (i = 0; i < n; i++)
+    printf("%d\n", array[i]);
+ 
+  return 0;
 }

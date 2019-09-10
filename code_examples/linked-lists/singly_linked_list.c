@@ -10,7 +10,7 @@ struct Node
 {
    int data;
    struct Node *next;
-}*head = NULL;
+} *head = NULL;
 
 void insertAtBeginning(int value)
 {
@@ -91,6 +91,7 @@ void removeBeginning()
       }
    }
 }
+
 void removeEnd()
 {
    if(head == NULL)
@@ -153,6 +154,20 @@ void removePosition(int pos)
     }
 }
 
+void search(int key)
+{
+    while (head != NULL)
+    {
+        if (head->data == key)
+        {
+            printf("The key is found in the list\n");
+            return;
+        }
+        head = head->next;
+    }
+    printf("The Key is not found in the list\n");
+}
+
 void display()
 {
    if(head == NULL)
@@ -175,10 +190,10 @@ void display()
 
 int main()
 {
-   int choice,value,choice1,pos,del;
+   int choice,value,choice1,pos,del,key;
    while(1){
    printf("\n\nSingly Linked List Operations\n");
-   printf("1. Insert at beginning\n2. Insert at End\n3. Insert at location\n4. Delete at beginning\n5. Delete at End\n6. Delete at location\n7. Display\n8. Exit\n\nEnter your choice:  ");
+   printf("1. Insert at beginning\n2. Insert at End\n3. Insert at location\n4. Delete at beginning\n5. Delete at End\n6. Delete at location\n7. Search\n8. Display\n9. Exit\n\nEnter your choice:  ");
    scanf("%d",&choice);
    switch(choice)
    {
@@ -204,9 +219,13 @@ int main()
                 scanf("%d",&pos);
 				removePosition(pos);
 				break;
-      case 7:   display();
+	  case 7:   printf("Enter the value which you want to search: ");
+                scanf("%d",&key);
+				search(key);
+				break;
+      case 8:   display();
                 break;
-      case 8:   exit(0);
+      case 9:   exit(0);
       default: printf("\nWrong Choice, Please try again\n\n");
             }
         }

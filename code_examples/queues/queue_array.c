@@ -9,7 +9,7 @@
 
 int queue[SIZE], front = -1, rear = -1;
 
-void enQueue(int value){
+void enQueue(int value) {
    if(rear == SIZE-1)
       printf("\nOverflow. Queue is Full.");
    else{
@@ -20,7 +20,8 @@ void enQueue(int value){
       printf("\nInsertion was successful");
    }
 }
-void deQueue(){
+
+void deQueue() {
    if(front == rear)
       printf("\nUnderflow. Queue is Empty.");
    else{
@@ -30,7 +31,8 @@ void deQueue(){
 	 front = rear = -1;
    }
 }
-void display(){
+
+void display() {
    if(rear == -1)
       printf("\nQueue is Empty!");
    else{
@@ -44,22 +46,25 @@ void display(){
 void main()
 {
    int value, choice;
-   while(1){
+   while(1) {
       printf("\nQueue Using Arrays\n");
       printf("1. Insertion\n2. Deletion\n3. Display\n4. Exit");
       printf("\nEnter your choice: ");
       scanf("%d",&choice);
-      switch(choice){
-	 case 1: printf("Enter the value to be inserted: ");
-             scanf("%d",&value);
-             enQueue(value);
-             break;
-	 case 2: deQueue();
-             break;
-	 case 3: display();
-             break;
-	 case 4: exit(0);
-     default: printf("\nWrong Choice, Please try again\n\n");
+      switch(choice) {
+         case 1: 
+            printf("Enter the value to be inserted: ");
+            scanf("%d",&value);
+            enQueue(value);
+            break;
+         case 2: 
+            deQueue();
+            break;
+         case 3: 
+            display();
+            break;
+         case 4: exit(0);
+         default: printf("\nWrong Choice, Please try again\n\n");
       }
    }
 }

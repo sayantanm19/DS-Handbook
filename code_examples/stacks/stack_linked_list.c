@@ -10,7 +10,7 @@ struct Node
 {
    int data;
    struct Node *next;
-}*top = NULL;
+} *top = NULL;
 
 void push(int value)
 {
@@ -24,6 +24,7 @@ void push(int value)
    top = newNode;
    printf("\nInsertion is Successful\n");
 }
+
 void pop()
 {
    if(top == NULL)
@@ -35,6 +36,7 @@ void pop()
       free(temp);
    }
 }
+
 void display()
 {
    if(top == NULL)
@@ -59,16 +61,20 @@ int main()
       printf("Enter your choice: ");
       scanf("%d",&choice);
       switch(choice){
-     case 1:    printf("Enter the value to be inserted: ");
-                scanf("%d", &value);
-                push(value);
-                break;
-	 case 2:    pop();
-                break;
-	 case 3:    display();
-                break;
-	 case 4:    exit(0);
-     default: printf("\nWrong Choice, Please try again\n\n");
+         case 1:
+            printf("Enter the value to be inserted: ");
+            scanf("%d", &value);
+            push(value);
+            break;
+         case 2: 
+            pop();
+            break;
+         case 3:    
+            display();
+            break;
+         case 4:    
+            exit(0);
+         default: printf("\nWrong Choice, Please try again\n\n");
       }
    }
 }
