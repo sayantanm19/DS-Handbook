@@ -9,15 +9,15 @@ int main()
 {
    int c, first, last, middle, n, search, array[100];
 
-   printf("Enter number of elements\n");
+   printf("Enter number of elements: ");
    scanf("%d",&n);
 
    printf("Enter all %d integers in sorted order\n", n);
 
-   for (c = 0; c < n; c++)
+   for (c = 0; c < n; c++){
       scanf("%d",&array[c]);
-
-   printf("Enter value to find\n");
+   }
+   printf("Enter value to find: ");
    scanf("%d", &search);
 
    first = 0;
@@ -28,7 +28,7 @@ int main()
       if (array[middle] < search)
          first = middle + 1;
       else if (array[middle] == search) {
-         printf("%d found at location %d.\n", search, middle+1);
+         printf("element %d is found at location %d.\n", search, middle+1);
          break;
       }
       else
