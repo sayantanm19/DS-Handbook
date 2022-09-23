@@ -12,11 +12,12 @@ int main()
    printf("Enter number of elements: ");
    scanf("%d",&n);
 
-   printf("Enter all %d integers in sorted order\n", n);
 
    for (c = 0; c < n; c++){
+      printf("Enter all %d integers in sorted order: ", n);
       scanf("%d",&array[c]);
    }
+   
    printf("Enter value to find: ");
    scanf("%d", &search);
 
@@ -25,19 +26,26 @@ int main()
    middle = (first+last)/2;
 
    while (first <= last) {
-      if (array[middle] < search)
+      
+      if (array[middle] < search){
          first = middle + 1;
+      }
+      
       else if (array[middle] == search) {
          printf("element %d is found at location %d.\n", search, middle+1);
          break;
       }
-      else
+      
+      else{
          last = middle - 1;
-
+      }
+      
       middle = (first + last)/2;
    }
-   if (first > last)
+   
+   if (first > last){
       printf("%d is not found in the array.\n", search);
-
+   }
+   
    return 0;
 }
